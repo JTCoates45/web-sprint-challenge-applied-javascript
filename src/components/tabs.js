@@ -13,6 +13,20 @@ const Tabs = (topics) => {
   //   <div class="tab">technology</div>
   // </div>
   //
+
+  const javascript = document.createElement('div');
+const bootstrap = document.createElement('div');
+const technology = document.createElement('div');
+
+javascript.classList.add('javascript');
+bootstrap.classList.add('bootstrap');
+technology.classList.add('technology');
+
+javascript.textContent = topics.javascriptAdd;
+bootstrap.textContent = topics.bootstrapAdd;
+technology.textContent = topics.technologyAdd;
+
+
 }
 
 const tabsAppender = (selector) => {

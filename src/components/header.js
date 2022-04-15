@@ -11,6 +11,18 @@ const Header = (title, date, temp) => {
   //    <span class="temp">{ temp }</span>
   //  </div>
   //
+//NEED A QUERRY SELCTOR WHERE!?!?!?!?!?!?!?!!?!?!?
+const titleCard = document.createElement('h1');
+const dateCard = document.createElement('span');
+const tempCard = document.createElement('span');
+
+titleCard.classList.add('titleAdd');
+dateCard.classList.add('dateAdd')
+tempCard.classList.add('tempAdd')
+
+titleCard.textContent = Header.titleAdd;
+dateCard.textContent = Header.dateAdd;
+tempCard.textContent = Header.tempAdd;
 }
 
 const headerAppender = (selector) => {
@@ -20,6 +32,8 @@ const headerAppender = (selector) => {
   // It should create a header using the Header component above, passing arguments of your choosing.
   // It should append the header to the element in the DOM that matches the given selector.
   //
+
+  Header.append(Header);
 }
 
 export { Header, headerAppender }
