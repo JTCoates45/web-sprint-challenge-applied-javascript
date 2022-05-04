@@ -1,5 +1,4 @@
-const Header = (title, date, temp) => {
-  // TASK 1
+// TASK 1
   // ---------------------
   // Implement this function taking `title`, `date` and `temp` as its 3 args and returning the markup below.
   // The tags used, the hierarchy of elements and their attributes must match the provided markup exactly!
@@ -11,21 +10,31 @@ const Header = (title, date, temp) => {
   //    <span class="temp">{ temp }</span>
   //  </div>
   //
-//NEED A QUERRY SELCTOR WHERE!?!?!?!?!?!?!?!!?!?!?
-const titleCard = document.createElement('h1');
-const dateCard = document.createElement('span');
-const tempCard = document.createElement('span');
 
-titleCard.classList.add('titleAdd');
-dateCard.classList.add('dateAdd')
-tempCard.classList.add('tempAdd')
 
-titleCard.textContent = Header.titleAdd;
-dateCard.textContent = Header.dateAdd;
-tempCard.textContent = Header.tempAdd;
+
+const Header = (title, date, temp) => {
+  const firstDiv= document.createElement('div');
+  const today = document.createElement('span');
+  const theTitle = document.createElement('h1')
+  const heat = document.createElement('span');
+
+  firstDiv.appendChild(today);
+  firstDiv.appendChild(theTitle);
+  firstDiv.appendChild(heat);
+
+  firstDiv.classList.add('header');
+  today.classList.add('date');
+  heat.classList.add('temp')
+
+  today.textContent = date;
+  theTitle.textContent = title;
+  heat.textContent = temp;
+
+  return firstDiv;
 }
-
 const headerAppender = (selector) => {
+  
   // TASK 2
   // ---------------------
   // Implement this function taking a css selector as its only argument.
@@ -33,7 +42,10 @@ const headerAppender = (selector) => {
   // It should append the header to the element in the DOM that matches the given selector.
   //
 
-  Header.append(Header);
+  const know = document.querySelector(selector);
+   know.appendChild(Header('BloomTech Times', 'April 29, 2022', '26' ))
 }
 
 export { Header, headerAppender }
+
+
